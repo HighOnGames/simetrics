@@ -1,0 +1,43 @@
+{
+ "id": "fh6",
+ "name": "Forza Horizon 6",
+ "short": "FH6",
+ "version": "1.0.0",
+ "core_api": 1,
+ "order": 20,
+ "description": "Forza Horizon 6: a UDP \"Data Out\" listener that cuts circuit, sprint and free-roam laps; car classes, PI and route types.",
+ "data_folder": "fh6",
+ "colors": {"dark": "#d95926", "light": "#eb6834"},
+ "logger": {
+  "kind": "UDP Data Out listener",
+  "path": "logger/fh6_laplogger.py",
+  "start": "logger/start_logger.bat",
+  "steps": ["In FH6: Settings > HUD and Gameplay > Data Out On, IP 127.0.0.1, port 5300.",
+            "Run logger/start_logger.bat while you drive (logger/probe.bat checks the stream). Laps go to data/fh6."]
+ },
+ "report": "report.bat",
+ "busy": {"command_line": ["fh6_laplogger.py"]},
+ "filters": {
+  "disciplines": ["Road", "Street", "Dirt", "Cross Country", "Touge", "Drag"],
+  "discipline_label": "FH6 type",
+  "discipline_tip": "Tip: set an FH6 route's type (Road, Dirt, Street…) with its ✎ button to filter by it."
+ },
+ "ui": {
+  "empty_hint": "the FH6 logger",
+  "picture_hint": "(a screenshot works: it is shrunk to about 30 KB)",
+  "class_colors": {"D": "#3d9ad6", "C": "#d9a514", "B": "#e07b1f", "A": "#d8443a", "S1": "#9b45cf", "S2": "#2f5fd6", "R": "#666", "X": "#23a34f"}
+ },
+ "notes": {
+  "track_status": "FH6 rewind-free does not certify track limits.",
+  "route_names": "FH6 routes are named by the logger or the user",
+  "handbrake": {"order": 10, "text": "FH6 reports the handbrake;"}
+ },
+ "provenance": {
+  "speed": "direct", "pedals": "direct", "steer": "derived: the game's steering input x an assumed wheel lock",
+  "gear": "direct (neutral blips during shifts ignored)", "position": "direct world x/z (z flipped to AC's frame)",
+  "slide angle": "derived from velocity vs heading", "handbrake": "direct",
+  "tyre slip": "the game's normalised slip (1.0 = grip limit)",
+  "valid": "rewind/reset detection only; FH6 track limits are unverified",
+  "input device": "the logger's --device setting, or guessed from each lap's pedal and steering data (FH6 doesn't report it)"
+ }
+}

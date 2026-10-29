@@ -1,0 +1,9 @@
+# personal data: laps, reports, names, pictures, analysis cache
+data/
+# written by install_ac_app.py with this machine's path
+modules/ac/logger/LapLogger/laplogger.ini
+__pycache__/
+*.pyc
+*.tmp
+# local module builds (publish with --out registry)
+dist/

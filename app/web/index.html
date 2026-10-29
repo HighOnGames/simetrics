@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simetrics</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a1a19'/%3E%3Cpath d='M7 22c3-9 6-12 9-12s4 6 9 2' fill='none' stroke='%233987e5' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='25' cy='12' r='2.6' fill='%23e66767'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="skins/carbon.css" id="skin">
+<link rel="stylesheet" href="modules.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#/"><span class="logo" aria-hidden="true"></span>Simetrics</a>
+  <nav class="nav">
+    <a href="#/" data-nav="library">Library</a>
+    <a href="#/habits" data-nav="habits">Trends</a>
+    <a href="#/modules" data-nav="modules">Modules</a>
+  </nav>
+  <div class="top-right">
+    <span id="status" class="status" hidden></span>
+    <button id="prompt-btn" class="btn prompt" title="A ready-to-paste prompt for any AI agent, filled in for the page you're on">
+      <span aria-hidden="true">✦</span> Copy AI prompt</button>
+    <button id="settings" class="icon-btn" title="Settings: units" aria-label="Settings">⚙</button>
+    <button id="theme" class="icon-btn" title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
+  </div>
+</header>
+<main id="view"></main>
+<div id="tip" class="tooltip" hidden></div>
+<dialog id="dlg"></dialog>
+<script src="charts.js"></script>
+<script src="replay.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

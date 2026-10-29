@@ -1,0 +1,38 @@
+{
+ "format": 1,
+ "name": "Simetrics modules",
+ "modules": [
+  {
+   "id": "ac",
+   "versions": [
+    {
+     "version": "1.0.0",
+     "core_api": 1,
+     "url": "ac-1.0.0.zip",
+     "sha256": "865e2fbc56537d33a9080df7724a8cb564526fd882ba584fb0db668b56ed0afe",
+     "size": 20763,
+     "released": "2026-10-29"
+    }
+   ],
+   "name": "Assetto Corsa",
+   "short": "AC",
+   "description": "Assetto Corsa (2014): the LapLogger in-game Python app, track and car pictures from your AC install, AC's AI line and saved best laps."
+  },
+  {
+   "id": "fh6",
+   "versions": [
+    {
+     "version": "1.0.0",
+     "core_api": 1,
+     "url": "fh6-1.0.0.zip",
+     "sha256": "eb4e37e7051e7338be8ef945ff75d6c6fdf98972aeb51115a334ac3fd1447e06",
+     "size": 15013,
+     "released": "2026-10-29"
+    }
+   ],
+   "name": "Forza Horizon 6",
+   "short": "FH6",
+   "description": "Forza Horizon 6: a UDP \"Data Out\" listener that cuts circuit, sprint and free-roam laps; car classes, PI and route types."
+  }
+ ]
+}

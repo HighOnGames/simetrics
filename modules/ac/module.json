@@ -1,0 +1,40 @@
+{
+ "id": "ac",
+ "name": "Assetto Corsa",
+ "short": "AC",
+ "version": "1.0.0",
+ "core_api": 1,
+ "order": 10,
+ "description": "Assetto Corsa (2014): the LapLogger in-game Python app, track and car pictures from your AC install, AC's AI line and saved best laps.",
+ "data_folder": "ac",
+ "headerless_laps": true,
+ "colors": {"dark": "#3987e5", "light": "#2a78d6"},
+ "settings": {"ac_install": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\assettocorsa"},
+ "logger": {
+  "kind": "in-game Python app",
+  "path": "logger/LapLogger",
+  "install": "logger/install_ac_app.bat",
+  "steps": ["Run logger/install_ac_app.bat once: it links assettocorsa/apps/python/LapLogger to logger/LapLogger and saves laps to data/ac.",
+            "Enable the app once in AC: Settings > General > UI Modules > LapLogger.",
+            "Start a new driving session after updating the app."]
+ },
+ "report": "report.bat",
+ "preserve": ["logger/LapLogger/laplogger.ini"],
+ "busy": {"processes": ["acs.exe", "AssettoCorsa.exe"]},
+ "ui": {
+  "empty_hint": "the LapLogger app in Assetto Corsa",
+  "picture_hint": "(optional: AC's own picture is used otherwise)"
+ },
+ "notes": {
+  "track_status": "Legacy AC track validity is unverified.",
+  "handbrake": {"order": 20, "text": "AC can't, so there it counts rear-wheel lock-ups with the brake pedal off."}
+ },
+ "provenance": {
+  "speed": "direct", "pedals": "direct", "steer": "direct steering-wheel angle", "gear": "direct",
+  "position": "direct world x/z", "slide angle": "derived from the car's local velocity (logger 1.3+)",
+  "handbrake": "proxy: rear-wheel lock-ups with the brake pedal off (AC doesn't report the handbrake)",
+  "tyre slip": "physics slip angle (degrees) and ratio",
+  "valid": "game invalid flags plus independently observed >2 tyres outside; observed-clear is not game certification, legacy validity is unverified",
+  "input device": "AC's own input setting (cfg/controls.ini INPUT_METHOD) at session start; older laps tagged by hand"
+ }
+}
